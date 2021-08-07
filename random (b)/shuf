@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir random/ && cd random/
+
+for numbers in random_text_{1..10}.txt;
+
+do
+shuf -er -n 1000 {0..1} > $numbers;
+done

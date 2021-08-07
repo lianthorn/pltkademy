@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mkdir server/ && cd server && touch servname{1..100}.conf
+
+echo "nginx-01.com" | tee -a servname{1..100}.conf >/dev/null
+
+sed -i 's/nginx-01.com/nginx-02.com/ g' ./servname*.conf

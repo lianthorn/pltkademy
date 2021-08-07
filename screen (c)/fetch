@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mkdir neofetch && cd neofetch/ && touch screen
+
+hn=$(hostname)
+cc=$(grep -m 1 "cpu cores" /proc/cpuinfo | awk '{print $4}')
+mt=$(grep "MemTotal" /proc/meminfo | awk '{print $2, $3}')
+totaldisk=$(df -h | grep sda | awk '{print $2}') 
+
+echo "Hostname: $hn" >> screen
+echo "Cpu cores: $cc" >> screen
+echo "Memory total: $mt" >> screen 
+echo "Total disk: $totaldisk" >> screen 
